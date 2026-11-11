@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="bg-[#030303] text-[#F3F3F3] antialiased">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,9 @@
     <!-- Google Fonts: Manrope -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -30,40 +32,126 @@
     <style>
         /* Premium Noise Overlay & Orbs */
         .noise-bg {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-            pointer-events: none; z-index: 50; opacity: 0.05;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 50;
+            opacity: 0.05;
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
-        .orb-1 { position: fixed; top: -20%; left: -10%; width: 60vw; height: 60vw; border-radius: 50%; background: radial-gradient(circle, rgba(59,130,246,0.06) 0%, rgba(0,0,0,0) 70%); z-index: 0; pointer-events: none; }
-        .orb-2 { position: fixed; bottom: -20%; right: -10%; width: 60vw; height: 60vw; border-radius: 50%; background: radial-gradient(circle, rgba(147,51,234,0.06) 0%, rgba(0,0,0,0) 70%); z-index: 0; pointer-events: none; }
+
+        .orb-1 {
+            position: fixed;
+            top: -20%;
+            left: -10%;
+            width: 60vw;
+            height: 60vw;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.06) 0%, rgba(0, 0, 0, 0) 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .orb-2 {
+            position: fixed;
+            bottom: -20%;
+            right: -10%;
+            width: 60vw;
+            height: 60vw;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(147, 51, 234, 0.06) 0%, rgba(0, 0, 0, 0) 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
 
         /* Custom Cursor */
-        body { cursor: none; overflow-x: hidden; }
+        body {
+            cursor: none;
+            overflow-x: hidden;
+        }
+
         #custom-cursor {
-            position: fixed; top: 0; left: 0; width: 12px; height: 12px;
-            background-color: white; border-radius: 50%; pointer-events: none; z-index: 9999;
-            transform: translate(-50%, -50%); transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), height 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 12px;
+            height: 12px;
+            background-color: white;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), height 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s;
             mix-blend-mode: difference;
         }
-        .cursor-hover { width: 50px !important; height: 50px !important; background-color: rgba(255,255,255,0.1) !important; backdrop-filter: blur(2px); mix-blend-mode: normal !important; border: 1px solid rgba(255,255,255,0.4); }
+
+        .cursor-hover {
+            width: 50px !important;
+            height: 50px !important;
+            background-color: rgba(255, 255, 255, 0.1) !important;
+            backdrop-filter: blur(2px);
+            mix-blend-mode: normal !important;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
 
         /* Lenis Smooth Scroll Fix */
-        html.lenis { height: auto; }
-        .lenis.lenis-smooth { scroll-behavior: auto !important; }
-        .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
-        .lenis.lenis-stopped { overflow: hidden; }
-        .lenis.lenis-scrolling iframe { pointer-events: none; }
+        html.lenis {
+            height: auto;
+        }
+
+        .lenis.lenis-smooth {
+            scroll-behavior: auto !important;
+        }
+
+        .lenis.lenis-smooth [data-lenis-prevent] {
+            overscroll-behavior: contain;
+        }
+
+        .lenis.lenis-stopped {
+            overflow: hidden;
+        }
+
+        .lenis.lenis-scrolling iframe {
+            pointer-events: none;
+        }
 
         /* Link Hover Animations */
-        .link-underline { position: relative; }
-        .link-underline::after { content: ''; position: absolute; width: 0; height: 1px; bottom: -2px; left: 0; background-color: currentColor; transition: width 0.3s ease-in-out; }
-        .link-underline:hover::after { width: 100%; }
+        .link-underline {
+            position: relative;
+        }
+
+        .link-underline::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: currentColor;
+            transition: width 0.3s ease-in-out;
+        }
+
+        .link-underline:hover::after {
+            width: 100%;
+        }
 
         /* Modal Sheet */
-        #project-modal, #cert-modal { transform: translateY(100%); transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
-        #project-modal.active, #cert-modal.active { transform: translateY(0); }
+        #project-modal,
+        #cert-modal {
+            transform: translateY(100%);
+            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        #project-modal.active,
+        #cert-modal.active {
+            transform: translateY(0);
+        }
     </style>
 </head>
+
 <body class="bg-bgDark text-textMain relative">
 
     <!-- Global Effects -->
@@ -75,7 +163,8 @@
     <!-- Preloader -->
     <div id="loader" class="fixed inset-0 bg-[#030303] z-[100] flex flex-col justify-center items-center">
         <div class="overflow-hidden">
-            <span id="loader-counter" class="block text-5xl md:text-7xl font-light tracking-tighter text-white loader-text font-mono">0%</span>
+            <span id="loader-counter"
+                class="block text-5xl md:text-7xl font-light tracking-tighter text-white loader-text font-mono">0%</span>
         </div>
         <div class="w-64 h-[1px] bg-white/10 mt-6 relative overflow-hidden">
             <div class="absolute top-0 left-0 h-full bg-gradient-to-r from-blue-500 to-purple-500 w-0 loader-bar"></div>
@@ -83,14 +172,19 @@
     </div>
 
     <!-- Navigation (Glassmorphism) -->
-    <nav class="fixed top-0 left-0 w-full p-6 md:px-12 md:py-6 flex justify-between items-center z-40 bg-[#030303]/40 backdrop-blur-md border-b border-white/5 transition-all duration-300">
+    <nav
+        class="fixed top-0 left-0 w-full p-6 md:px-12 md:py-6 flex justify-between items-center z-40 bg-[#030303]/40 backdrop-blur-md border-b border-white/5 transition-all duration-300">
         <a href="#" class="text-lg font-semibold tracking-tight cursor-pointer">abel.dev</a>
         <div class="hidden md:flex gap-8 text-sm font-medium tracking-wide">
             <a href="#" class="text-gray-400 hover:text-white transition-colors link-underline cursor-pointer">Home</a>
-            <a href="#about" class="text-gray-400 hover:text-white transition-colors link-underline cursor-pointer">About</a>
-            <a href="#experience" class="text-gray-400 hover:text-white transition-colors link-underline cursor-pointer">Experience</a>
-            <a href="#projects" class="text-gray-400 hover:text-white transition-colors link-underline cursor-pointer">Projects</a>
-            <a href="#contact" class="text-gray-400 hover:text-white transition-colors link-underline cursor-pointer">Contact</a>
+            <a href="#about"
+                class="text-gray-400 hover:text-white transition-colors link-underline cursor-pointer">About</a>
+            <a href="#experience"
+                class="text-gray-400 hover:text-white transition-colors link-underline cursor-pointer">Experience</a>
+            <a href="#projects"
+                class="text-gray-400 hover:text-white transition-colors link-underline cursor-pointer">Projects</a>
+            <a href="#contact"
+                class="text-gray-400 hover:text-white transition-colors link-underline cursor-pointer">Contact</a>
         </div>
     </nav>
 
@@ -98,134 +192,186 @@
         <!-- 1. Hero Section -->
         <section class="flex flex-col justify-center px-6 md:px-12 lg:px-24 relative pt-40 md:pt-48 pb-20 min-h-screen">
             <div class="overflow-hidden mb-6">
-                <p class="text-textMuted uppercase tracking-[0.2em] text-xs font-mono hero-reveal border border-white/10 rounded-full px-4 py-1.5 inline-block bg-white/5 backdrop-blur-sm">
+                <p
+                    class="text-textMuted uppercase tracking-[0.2em] text-xs font-mono hero-reveal border border-white/10 rounded-full px-4 py-1.5 inline-block bg-white/5 backdrop-blur-sm">
                     Informatics Student / AI & Data / UI/UX Designer
                 </p>
             </div>
-            
+
             <div class="max-w-5xl">
-                <h1 class="text-[3.5rem] md:text-[6rem] lg:text-[7.5rem] leading-[0.9] font-semibold tracking-tighter mb-10">
-                    <div class="overflow-hidden"><span class="block hero-reveal bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">Exploring AI,</span></div>
-                    <div class="overflow-hidden"><span class="block hero-reveal text-gray-500">analyzing data,</span></div>
+                <h1
+                    class="text-[3.5rem] md:text-[6rem] lg:text-[7.5rem] leading-[0.9] font-semibold tracking-tighter mb-10">
+                    <div class="overflow-hidden"><span
+                            class="block hero-reveal bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">Exploring
+                            AI,</span></div>
+                    <div class="overflow-hidden"><span class="block hero-reveal text-gray-500">analyzing data,</span>
+                    </div>
                     <div class="overflow-hidden"><span class="block hero-reveal">and crafting</span></div>
                     <div class="overflow-hidden"><span class="block hero-reveal">experiences.</span></div>
                 </h1>
             </div>
 
-            <div class="mt-8 flex flex-col md:flex-row gap-8 md:gap-16 justify-between items-start border-t border-white/10 pt-10 hero-fade">
+            <div
+                class="mt-8 flex flex-col md:flex-row gap-8 md:gap-16 justify-between items-start border-t border-white/10 pt-10 hero-fade">
                 <div class="md:w-3/5 flex flex-col sm:flex-row gap-6 items-start">
-                    <div class="w-24 h-24 rounded-full overflow-hidden shrink-0 border-2 border-white/10 shadow-[0_0_30px_rgba(255,255,255,0.05)]">
-                        <img src="Kastabel Deandra.png" alt="Kastabel Deandra Putrawan" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                    <div
+                        class="w-24 h-24 rounded-full overflow-hidden shrink-0 border-2 border-white/10 shadow-[0_0_30px_rgba(255,255,255,0.05)]">
+                        <img src="Kastabel Deandra.png" alt="Kastabel Deandra Putrawan"
+                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
                     </div>
                     <div>
                         <h2 class="text-xl font-medium mb-3 text-white">Kastabel Deandra Putrawan</h2>
                         <p class="text-textMuted text-sm md:text-base leading-relaxed font-light">
-                            Informatics student at Universitas Ahmad Dahlan with a focus on Artificial Intelligence, Machine Learning, Data Analysis, and UI/UX Design. Passionate about learning data patterns and designing useful digital solutions.
+                            Informatics student at Universitas Ahmad Dahlan with a focus on Artificial Intelligence,
+                            Machine Learning, Data Analysis, and UI/UX Design. Passionate about learning data patterns
+                            and designing useful digital solutions.
                         </p>
                     </div>
                 </div>
-                <div class="flex flex-col gap-3 text-xs text-textMuted w-full md:w-2/5 shrink-0 font-mono bg-white/[0.02] p-5 rounded-lg border border-white/5 hover:border-white/10 transition-colors">
-                    <p class="flex justify-between gap-4 border-b border-white/5 pb-2"><span>Location</span> <span class="text-white text-right">Yogyakarta, ID</span></p>
-                    <p class="flex justify-between gap-4 border-b border-white/5 pb-2"><span>University</span> <span class="text-white text-right">Ahmad Dahlan</span></p>
-                    <p class="flex justify-between gap-4 border-b border-white/5 pb-2"><span>GPA</span> <span class="text-white text-right">3.88 / 4.00</span></p>
+                <div
+                    class="flex flex-col gap-3 text-xs text-textMuted w-full md:w-2/5 shrink-0 font-mono bg-white/[0.02] p-5 rounded-lg border border-white/5 hover:border-white/10 transition-colors">
+                    <p class="flex justify-between gap-4 border-b border-white/5 pb-2"><span>Location</span> <span
+                            class="text-white text-right">Yogyakarta, ID</span></p>
+                    <p class="flex justify-between gap-4 border-b border-white/5 pb-2"><span>University</span> <span
+                            class="text-white text-right">Ahmad Dahlan</span></p>
+                    <p class="flex justify-between gap-4 border-b border-white/5 pb-2"><span>GPA</span> <span
+                            class="text-white text-right">3.88 / 4.00</span></p>
                 </div>
             </div>
         </section>
 
         <!-- 2. Selected Projects -->
         <section id="projects" class="py-20 md:py-32 px-6 md:px-12 lg:px-24">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-white/10 pb-8 scroll-reveal">
+            <div
+                class="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-white/10 pb-8 scroll-reveal">
                 <h2 class="text-4xl md:text-6xl font-medium tracking-tight">Selected<br>Works.</h2>
                 <p class="text-textMuted uppercase tracking-[0.15em] text-xs font-mono mb-2">2025 — 2026</p>
             </div>
-            
+
             <div class="space-y-24">
                 <!-- Project 1 (News Category Classification) -->
-                <div class="project-row flex flex-col lg:flex-row gap-10 items-center scroll-reveal group cursor-pointer" onclick="openProject('sentiment')">
-                    <div class="lg:w-1/2 w-full aspect-[4/3] bg-[#0c0c0c] rounded-xl overflow-hidden border border-white/10 relative">
-                        <img src="project2.png" alt="Project 1" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out">
+                <div class="project-row flex flex-col lg:flex-row gap-10 items-center scroll-reveal group cursor-pointer"
+                    onclick="openProject('sentiment')">
+                    <div
+                        class="lg:w-1/2 w-full aspect-[4/3] bg-[#0c0c0c] rounded-xl overflow-hidden border border-white/10 relative">
+                        <img src="project2.png" alt="Project 1"
+                            class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out">
                     </div>
                     <div class="lg:w-1/2 pl-0 lg:pl-8">
                         <div class="flex items-center gap-3 mb-4">
                             <span class="w-2 h-2 rounded-full bg-purple-500"></span>
-                            <p class="text-xs uppercase tracking-widest text-gray-400 font-mono">Machine Learning • 2026</p>
+                            <p class="text-xs uppercase tracking-widest text-gray-400 font-mono">Machine Learning • 2026
+                            </p>
                         </div>
-                        <h3 class="text-3xl md:text-4xl font-medium mb-4 group-hover:text-purple-400 transition-colors duration-500">News Category Classification</h3>
-                        <p class="text-textMuted text-base mb-6 font-light leading-relaxed">A Machine Learning pipeline using TF-IDF vectorization and Logistic Regression to automatically classify news headlines into World, Sports, Business, and Sci/Tech categories.</p>
-                        <span class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest border border-white/20 px-4 py-2 rounded-full group-hover:bg-white group-hover:text-black transition-all duration-300">
+                        <h3
+                            class="text-3xl md:text-4xl font-medium mb-4 group-hover:text-purple-400 transition-colors duration-500">
+                            News Category Classification</h3>
+                        <p class="text-textMuted text-base mb-6 font-light leading-relaxed">A Machine Learning pipeline
+                            using TF-IDF vectorization and Logistic Regression to automatically classify news headlines
+                            into World, Sports, Business, and Sci/Tech categories.</p>
+                        <span
+                            class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest border border-white/20 px-4 py-2 rounded-full group-hover:bg-white group-hover:text-black transition-all duration-300">
                             Explore Pipeline &rarr;
                         </span>
                     </div>
                 </div>
 
                 <!-- Project 2 (Avana) -->
-                <div class="project-row flex flex-col lg:flex-row gap-10 items-center scroll-reveal group cursor-pointer" onclick="openProject('avana')">
+                <div class="project-row flex flex-col lg:flex-row gap-10 items-center scroll-reveal group cursor-pointer"
+                    onclick="openProject('avana')">
                     <div class="lg:w-1/2 order-2 lg:order-1">
                         <div class="flex items-center gap-3 mb-4">
                             <span class="w-2 h-2 rounded-full bg-green-500"></span>
                             <p class="text-xs uppercase tracking-widest text-gray-400 font-mono">UI/UX Design • 2025</p>
                         </div>
-                        <h3 class="text-3xl md:text-4xl font-medium mb-4 group-hover:text-green-400 transition-colors duration-500">Avana — Waste Pickup Experience</h3>
-                        <p class="text-textMuted text-base mb-6 font-light leading-relaxed">User experience (UX) and interface (UI) design for a digital waste pickup booking application based on extensive user research.</p>
-                        <span class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest border border-white/20 px-4 py-2 rounded-full group-hover:bg-white group-hover:text-black transition-all duration-300">
+                        <h3
+                            class="text-3xl md:text-4xl font-medium mb-4 group-hover:text-green-400 transition-colors duration-500">
+                            Avana — Waste Pickup Experience</h3>
+                        <p class="text-textMuted text-base mb-6 font-light leading-relaxed">User experience (UX) and
+                            interface (UI) design for a digital waste pickup booking application based on extensive user
+                            research.</p>
+                        <span
+                            class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest border border-white/20 px-4 py-2 rounded-full group-hover:bg-white group-hover:text-black transition-all duration-300">
                             View Case Study &rarr;
                         </span>
                     </div>
-                    <div class="lg:w-1/2 w-full aspect-[4/3] bg-[#0c0c0c] rounded-xl overflow-hidden order-1 lg:order-2 border border-white/10 relative">
-                        <img src="project3.png" alt="Project 2" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out">
+                    <div
+                        class="lg:w-1/2 w-full aspect-[4/3] bg-[#0c0c0c] rounded-xl overflow-hidden order-1 lg:order-2 border border-white/10 relative">
+                        <img src="project3.png" alt="Project 2"
+                            class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out">
                     </div>
                 </div>
 
                 <!-- Project 3 (Sasmitaloka) -->
-                <div class="project-row flex flex-col lg:flex-row gap-10 items-center scroll-reveal group cursor-pointer" onclick="openProject('sasmitaloka')">
-                    <div class="lg:w-1/2 w-full aspect-[4/3] bg-[#0c0c0c] rounded-xl overflow-hidden border border-white/10 relative">
-                        <img src="project4.png" alt="Sasmitaloka PWA UI/UX Design" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out">
+                <div class="project-row flex flex-col lg:flex-row gap-10 items-center scroll-reveal group cursor-pointer"
+                    onclick="openProject('sasmitaloka')">
+                    <div
+                        class="lg:w-1/2 w-full aspect-[4/3] bg-[#0c0c0c] rounded-xl overflow-hidden border border-white/10 relative">
+                        <img src="project4.png" alt="Sasmitaloka PWA UI/UX Design"
+                            class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out">
                     </div>
                     <div class="lg:w-1/2 pl-0 lg:pl-8">
                         <div class="flex items-center gap-3 mb-4">
                             <span class="w-2 h-2 rounded-full bg-amber-500"></span>
-                            <p class="text-xs uppercase tracking-widest text-gray-400 font-mono">UI/UX Design • 2025–2026</p>
+                            <p class="text-xs uppercase tracking-widest text-gray-400 font-mono">UI/UX Design •
+                                2025–2026</p>
                         </div>
-                        <h3 class="text-3xl md:text-4xl font-medium mb-4 group-hover:text-amber-400 transition-colors duration-500">Sasmitaloka — Inclusive Learning PWA</h3>
-                        <p class="text-textMuted text-base mb-6 font-light leading-relaxed">UI/UX design for a Progressive Web App (PWA) tailored for deaf elementary students (grades 4–6). Integrating Javanese Kawung batik aesthetics, Indonesian folktales, BISINDO sign language videos, story rewriting, and comprehension quizzes.</p>
-                        <span class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest border border-white/20 px-4 py-2 rounded-full group-hover:bg-white group-hover:text-black transition-all duration-300">
+                        <h3
+                            class="text-3xl md:text-4xl font-medium mb-4 group-hover:text-amber-400 transition-colors duration-500">
+                            Sasmitaloka — Inclusive Learning PWA</h3>
+                        <p class="text-textMuted text-base mb-6 font-light leading-relaxed">UI/UX design for a
+                            Progressive Web App (PWA) tailored for deaf elementary students (grades 4–6). Integrating
+                            Javanese Kawung batik aesthetics, Indonesian folktales, BISINDO sign language videos, story
+                            rewriting, and comprehension quizzes.</p>
+                        <span
+                            class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest border border-white/20 px-4 py-2 rounded-full group-hover:bg-white group-hover:text-black transition-all duration-300">
                             View Case Study &rarr;
                         </span>
                     </div>
                 </div>
 
                 <!-- Project 4 (MEDIVA - Telemedicine & Healthcare Services Mobile App) -->
-                <div class="project-row flex flex-col lg:flex-row gap-10 items-center scroll-reveal group cursor-pointer" onclick="openProject('mediva')">
+                <div class="project-row flex flex-col lg:flex-row gap-10 items-center scroll-reveal group cursor-pointer"
+                    onclick="openProject('mediva')">
                     <div class="lg:w-1/2 order-2 lg:order-1">
                         <div class="flex items-center gap-3 mb-4">
                             <span class="w-2 h-2 rounded-full bg-teal-500"></span>
-                            <p class="text-xs uppercase tracking-widest text-gray-400 font-mono">UI/UX Design • 2025–2026</p>
+                            <p class="text-xs uppercase tracking-widest text-gray-400 font-mono">UI/UX Design •
+                                2025–2026</p>
                         </div>
-                        <h3 class="text-3xl md:text-4xl font-medium mb-4 group-hover:text-teal-400 transition-colors duration-500">MEDIVA — Telemedicine & Healthcare Mobile App</h3>
-                        <p class="text-textMuted text-base mb-6 font-light leading-relaxed">A modern Telemedicine & Healthcare Services App UI/UX design featuring nearest hospital geolocation mapping, doctor consultations with virtual assistants, home care visits, educational videos, and quick emergency SOS dispatch.</p>
-                        <span class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest border border-white/20 px-4 py-2 rounded-full group-hover:bg-white group-hover:text-black transition-all duration-300">
+                        <h3
+                            class="text-3xl md:text-4xl font-medium mb-4 group-hover:text-teal-400 transition-colors duration-500">
+                            MEDIVA — Telemedicine & Healthcare Mobile App</h3>
+                        <p class="text-textMuted text-base mb-6 font-light leading-relaxed">A modern Telemedicine &
+                            Healthcare Services App UI/UX design featuring nearest hospital geolocation mapping, doctor
+                            consultations with virtual assistants, home care visits, educational videos, and quick
+                            emergency SOS dispatch.</p>
+                        <span
+                            class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest border border-white/20 px-4 py-2 rounded-full group-hover:bg-white group-hover:text-black transition-all duration-300">
                             View Case Study &rarr;
                         </span>
                     </div>
-                    <div class="lg:w-1/2 w-full aspect-[4/3] bg-[#0c0c0c] rounded-xl overflow-hidden order-1 lg:order-2 border border-white/10 relative">
-                        <img src="project5.png" alt="MEDIVA Telemedicine Mobile App UI/UX" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out">
+                    <div
+                        class="lg:w-1/2 w-full aspect-[4/3] bg-[#0c0c0c] rounded-xl overflow-hidden order-1 lg:order-2 border border-white/10 relative">
+                        <img src="project5.png" alt="MEDIVA Telemedicine Mobile App UI/UX"
+                            class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out">
                     </div>
                 </div>
-                
-                <!-- Project 5 (Graphic Designer) -->
+
+                <!-- Project 5 (NOMI — Instagram Post & Story Design System) -->
                 <div class="project-row flex flex-col lg:flex-row gap-10 items-center scroll-reveal group cursor-pointer" onclick="openProject('nomi')">
                     <div class="lg:w-1/2 w-full aspect-[4/3] bg-[#0c0c0c] rounded-xl overflow-hidden border border-white/10 relative">
-                        <img src="project6.png" alt="NOMI" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out">
+                        <img src="project6.png" alt="NOMI Instagram Post & Story Templates" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out">
                     </div>
                     <div class="lg:w-1/2 pl-0 lg:pl-8">
                         <div class="flex items-center gap-3 mb-4">
-                            <span class="w-2 h-2 rounded-full bg-amber-500"></span>
-                            <p class="text-xs uppercase tracking-widest text-gray-400 font-mono">UI/UX Design • 2025–2026</p>
+                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                            <p class="text-xs uppercase tracking-widest text-gray-400 font-mono">Social Media Design • 2026</p>
                         </div>
-                        <h3 class="text-3xl md:text-4xl font-medium mb-4 group-hover:text-amber-400 transition-colors duration-500">NOMI — Social Media Design</h3>
-                        <p class="text-textMuted text-base mb-6 font-light leading-relaxed">UI/UX design for a Progressive Web App (PWA) tailored for deaf elementary students (grades 4–6). Integrating Javanese Kawung batik aesthetics, Indonesian folktales, BISINDO sign language videos, story rewriting, and comprehension quizzes.</p>
+                        <h3 class="text-3xl md:text-4xl font-medium mb-4 group-hover:text-emerald-400 transition-colors duration-500">NOMI — Instagram Post & Story Design System</h3>
+                        <p class="text-textMuted text-base mb-6 font-light leading-relaxed">On-brand editable social media templates designed for NOMI Matcha & Coffee. Features structured carousel series (Matcha Series & Coffee Series) with clean typography, price tags, and modern product showcases for Instagram posts and stories.</p>
                         <span class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest border border-white/20 px-4 py-2 rounded-full group-hover:bg-white group-hover:text-black transition-all duration-300">
-                            View Case Study &rarr;
+                            View Design System &rarr;
                         </span>
                     </div>
                 </div>
@@ -235,21 +381,29 @@
         <!-- 3. Experience & Bento Grid -->
         <section id="experience" class="py-20 md:py-32 px-6 md:px-12 lg:px-24 bg-[#080808]/50 border-y border-white/5">
             <div class="max-w-6xl mx-auto">
-                <h2 class="text-3xl md:text-5xl font-medium tracking-tight mb-12 scroll-reveal text-center">Toolkit & Experience.</h2>
-                
+                <h2 class="text-3xl md:text-5xl font-medium tracking-tight mb-12 scroll-reveal text-center">Toolkit &
+                    Experience.</h2>
+
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 scroll-reveal">
                     <!-- Bento Box 1: Lab Assistant -->
-                    <div class="col-span-1 md:col-span-2 bg-[#0c0c0c] border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all duration-500 relative overflow-hidden group">
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl group-hover:bg-blue-500/20 transition-all"></div>
+                    <div
+                        class="col-span-1 md:col-span-2 bg-[#0c0c0c] border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all duration-500 relative overflow-hidden group">
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl group-hover:bg-blue-500/20 transition-all">
+                        </div>
                         <h3 class="text-xl font-semibold mb-2">Computer Laboratory Assistant</h3>
                         <p class="text-xs font-mono text-gray-500 mb-6">UAD • 2025 — Present</p>
-                        <p class="text-textMuted text-sm leading-relaxed font-light mb-4">Guiding students in learning Informatics Logic and Artificial Intelligence (AI). Assisting in evaluating students' understanding of data processing algorithms.</p>
+                        <p class="text-textMuted text-sm leading-relaxed font-light mb-4">Guiding students in learning
+                            Informatics Logic and Artificial Intelligence (AI). Assisting in evaluating students'
+                            understanding of data processing algorithms.</p>
                     </div>
-                    
+
                     <!-- Bento Box 2: Google Gemini Certificate -->
-                    <div class="col-span-1 bg-[#0c0c0c] border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all duration-500 flex flex-col justify-between cursor-pointer group" onclick="openCertModal('https://placehold.co/1000x700/111/fff?text=Google+Gemini+Certificate')">
+                    <div class="col-span-1 bg-[#0c0c0c] border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all duration-500 flex flex-col justify-between cursor-pointer group"
+                        onclick="openCertModal('https://placehold.co/1000x700/111/fff?text=Google+Gemini+Certificate')">
                         <div>
-                            <span class="text-xs uppercase tracking-widest text-blue-400 font-mono mb-2 block">Certification</span>
+                            <span
+                                class="text-xs uppercase tracking-widest text-blue-400 font-mono mb-2 block">Certification</span>
                             <h3 class="text-lg font-semibold leading-tight">Gemini Certified Student</h3>
                         </div>
                         <div class="mt-8 flex justify-between items-center text-xs font-mono text-gray-500">
@@ -259,31 +413,52 @@
                     </div>
 
                     <!-- Bento Box 3: Core Skills -->
-                    <div class="col-span-1 bg-[#0c0c0c] border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all duration-500">
+                    <div
+                        class="col-span-1 bg-[#0c0c0c] border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all duration-500">
                         <h3 class="text-sm uppercase tracking-widest text-gray-500 font-mono mb-4">Core Skills</h3>
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1.5 rounded-md bg-white/5 border border-white/10 text-xs text-gray-300">Python</span>
-                            <span class="px-3 py-1.5 rounded-md bg-white/5 border border-white/10 text-xs text-gray-300">Machine Learning</span>
-                            <span class="px-3 py-1.5 rounded-md bg-white/5 border border-white/10 text-xs text-gray-300">Data Analysis</span>
-                            <span class="px-3 py-1.5 rounded-md bg-white/5 border border-white/10 text-xs text-gray-300">UI/UX Design</span>
-                            <span class="px-3 py-1.5 rounded-md bg-white/5 border border-white/10 text-xs text-gray-300">Figma</span>
+                            <span
+                                class="px-3 py-1.5 rounded-md bg-white/5 border border-white/10 text-xs text-gray-300">Python</span>
+                            <span
+                                class="px-3 py-1.5 rounded-md bg-white/5 border border-white/10 text-xs text-gray-300">Machine
+                                Learning</span>
+                            <span
+                                class="px-3 py-1.5 rounded-md bg-white/5 border border-white/10 text-xs text-gray-300">Data
+                                Analysis</span>
+                            <span
+                                class="px-3 py-1.5 rounded-md bg-white/5 border border-white/10 text-xs text-gray-300">UI/UX
+                                Design</span>
+                            <span
+                                class="px-3 py-1.5 rounded-md bg-white/5 border border-white/10 text-xs text-gray-300">Figma</span>
                         </div>
                     </div>
 
                     <!-- Bento Box 4: Achievement - 1st Place UI/UX Competition -->
-                    <div class="col-span-1 bg-[#0c0c0c] border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all duration-500 relative overflow-hidden group">
-                        <div class="absolute bottom-0 left-0 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl group-hover:bg-purple-500/20 transition-all"></div>
-                        <span class="text-xs uppercase tracking-widest text-purple-400 font-mono mb-2 block">Achievement</span>
+                    <div
+                        class="col-span-1 bg-[#0c0c0c] border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all duration-500 relative overflow-hidden group">
+                        <div
+                            class="absolute bottom-0 left-0 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl group-hover:bg-purple-500/20 transition-all">
+                        </div>
+                        <span
+                            class="text-xs uppercase tracking-widest text-purple-400 font-mono mb-2 block">Achievement</span>
                         <h3 class="text-xl font-semibold mb-2">1st Place — UI/UX Mobile App Competition</h3>
-                        <p class="text-textMuted text-sm leading-relaxed font-light mt-4">IFWeek x PARMATIK 2026. Successfully engineered an innovative digital product interface outperforming dozens of other participants.</p>
+                        <p class="text-textMuted text-sm leading-relaxed font-light mt-4">IFWeek x PARMATIK 2026.
+                            Successfully engineered an innovative digital product interface outperforming dozens of
+                            other participants.</p>
                     </div>
 
                     <!-- Bento Box 5: Achievement - Finalist UI/UX Competition (I-COM 2024) -->
-                    <div class="col-span-1 bg-[#0c0c0c] border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all duration-500 relative overflow-hidden group">
-                        <div class="absolute bottom-0 left-0 w-32 h-32 bg-amber-500/10 rounded-full blur-3xl group-hover:bg-amber-500/20 transition-all"></div>
-                        <span class="text-xs uppercase tracking-widest text-amber-400 font-mono mb-2 block">Achievement</span>
+                    <div
+                        class="col-span-1 bg-[#0c0c0c] border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all duration-500 relative overflow-hidden group">
+                        <div
+                            class="absolute bottom-0 left-0 w-32 h-32 bg-amber-500/10 rounded-full blur-3xl group-hover:bg-amber-500/20 transition-all">
+                        </div>
+                        <span
+                            class="text-xs uppercase tracking-widest text-amber-400 font-mono mb-2 block">Achievement</span>
                         <h3 class="text-xl font-semibold mb-2">Finalist — UI/UX Competition (I-COM)</h3>
-                        <p class="text-textMuted text-sm leading-relaxed font-light mt-4">HMIF Universitas Ahmad Dahlan 2024. Designed innovative sustainable technology solutions centered on broader societal benefits.</p>
+                        <p class="text-textMuted text-sm leading-relaxed font-light mt-4">HMIF Universitas Ahmad Dahlan
+                            2024. Designed innovative sustainable technology solutions centered on broader societal
+                            benefits.</p>
                     </div>
                 </div>
             </div>
@@ -298,24 +473,37 @@
                 <p class="text-base text-textMuted font-light mb-12 scroll-reveal max-w-lg leading-relaxed">
                     Open for technical discussions, research project collaborations, or professional work opportunities.
                 </p>
-                
+
                 <!-- Get in Touch: Uniform Dark/Monochrome (Active on Hover) -->
                 <div class="scroll-reveal flex flex-wrap justify-center gap-4">
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="cursor-pointer inline-flex items-center justify-center gap-2 bg-white/10 text-white border border-white/20 px-6 py-3.5 rounded-full font-medium hover:bg-white hover:text-black transition-all duration-300 text-sm tracking-wide">
-                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+                        class="cursor-pointer inline-flex items-center justify-center gap-2 bg-white/10 text-white border border-white/20 px-6 py-3.5 rounded-full font-medium hover:bg-white hover:text-black transition-all duration-300 text-sm tracking-wide">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                        </svg>
                         LinkedIn
                     </a>
-                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="cursor-pointer inline-flex items-center justify-center gap-2 bg-white/10 text-white border border-white/20 px-6 py-3.5 rounded-full font-medium hover:bg-white hover:text-black transition-all duration-300 text-sm tracking-wide">
-                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                        class="cursor-pointer inline-flex items-center justify-center gap-2 bg-white/10 text-white border border-white/20 px-6 py-3.5 rounded-full font-medium hover:bg-white hover:text-black transition-all duration-300 text-sm tracking-wide">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" />
+                        </svg>
                         GitHub
                     </a>
-                    <a href="mailto:email@domain.com" class="cursor-pointer inline-flex items-center justify-center gap-2 bg-white/10 text-white border border-white/20 px-6 py-3.5 rounded-full font-medium hover:bg-white hover:text-black transition-all duration-300 text-sm tracking-wide">
-                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    <a href="mailto:email@domain.com"
+                        class="cursor-pointer inline-flex items-center justify-center gap-2 bg-white/10 text-white border border-white/20 px-6 py-3.5 rounded-full font-medium hover:bg-white hover:text-black transition-all duration-300 text-sm tracking-wide">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                        </svg>
                         Email
                     </a>
                 </div>
 
-                <div class="flex justify-center gap-8 mt-24 border-t border-white/10 pt-8 w-full scroll-reveal text-xs font-mono text-gray-500">
+                <div
+                    class="flex justify-center gap-8 mt-24 border-t border-white/10 pt-8 w-full scroll-reveal text-xs font-mono text-gray-500">
                     <span>&copy; 2026 KASTABEL DEANDRA P. ALL RIGHTS RESERVED.</span>
                 </div>
             </div>
@@ -323,20 +511,28 @@
     </main>
 
     <!-- SPA Project Detail Modal -->
-    <div id="project-modal" class="fixed inset-0 z-50 overflow-y-auto w-full h-full pb-20 bg-[#030303]/95 backdrop-blur-xl" data-lenis-prevent>
-        <div class="sticky top-0 w-full p-6 md:px-12 md:py-8 flex justify-between items-center bg-gradient-to-b from-[#030303] to-transparent z-10">
-            <button onclick="closeProject()" class="text-xs font-mono uppercase tracking-widest text-white hover:text-gray-400 transition-colors flex items-center gap-2 cursor-pointer bg-white/10 px-4 py-2 rounded-full border border-white/20">
+    <div id="project-modal"
+        class="fixed inset-0 z-50 overflow-y-auto w-full h-full pb-20 bg-[#030303]/95 backdrop-blur-xl"
+        data-lenis-prevent>
+        <div
+            class="sticky top-0 w-full p-6 md:px-12 md:py-8 flex justify-between items-center bg-gradient-to-b from-[#030303] to-transparent z-10">
+            <button onclick="closeProject()"
+                class="text-xs font-mono uppercase tracking-widest text-white hover:text-gray-400 transition-colors flex items-center gap-2 cursor-pointer bg-white/10 px-4 py-2 rounded-full border border-white/20">
                 &larr; Back
             </button>
-            <span id="modal-category" class="text-xs font-mono uppercase tracking-widest text-blue-400 hidden md:block"></span>
+            <span id="modal-category"
+                class="text-xs font-mono uppercase tracking-widest text-blue-400 hidden md:block"></span>
         </div>
 
         <div class="px-6 md:px-12 lg:px-24 pt-8 max-w-5xl mx-auto">
             <h1 id="modal-title" class="text-4xl md:text-6xl font-medium tracking-tight mb-6"></h1>
-            <p id="modal-desc" class="text-lg md:text-xl text-gray-300 font-light leading-relaxed mb-12 border-b border-white/10 pb-10"></p>
-            
+            <p id="modal-desc"
+                class="text-lg md:text-xl text-gray-300 font-light leading-relaxed mb-12 border-b border-white/10 pb-10">
+            </p>
+
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pt-4">
-                <div class="space-y-8 shrink-0 text-xs font-mono bg-white/5 p-6 rounded-xl border border-white/10 h-fit">
+                <div
+                    class="space-y-8 shrink-0 text-xs font-mono bg-white/5 p-6 rounded-xl border border-white/10 h-fit">
                     <div>
                         <h4 class="uppercase tracking-widest text-gray-500 mb-2">Role</h4>
                         <p id="modal-role" class="text-gray-200 font-sans text-sm">UI/UX Designer</p>
@@ -353,7 +549,8 @@
 
                 <div class="md:col-span-2">
                     <h3 class="text-2xl font-medium mb-6">Technical Methodology</h3>
-                    <ul id="modal-list" class="space-y-4 text-base text-gray-400 font-light list-disc pl-5 leading-relaxed marker:text-blue-500">
+                    <ul id="modal-list"
+                        class="space-y-4 text-base text-gray-400 font-light list-disc pl-5 leading-relaxed marker:text-blue-500">
                         <!-- Injected via JS -->
                     </ul>
                 </div>
@@ -362,15 +559,19 @@
     </div>
 
     <!-- SPA Certificate Modal -->
-    <div id="cert-modal" class="fixed inset-0 bg-[#030303]/95 backdrop-blur-xl z-50 flex flex-col justify-between p-6 md:p-12 overflow-y-auto" data-lenis-prevent>
+    <div id="cert-modal"
+        class="fixed inset-0 bg-[#030303]/95 backdrop-blur-xl z-50 flex flex-col justify-between p-6 md:p-12 overflow-y-auto"
+        data-lenis-prevent>
         <div class="flex justify-between items-center w-full border-b border-white/10 pb-4">
             <span class="text-xs font-mono text-gray-400 uppercase tracking-widest">Official Document</span>
-            <button onclick="closeCertModal()" class="text-xs font-mono text-white hover:text-gray-400 cursor-pointer uppercase tracking-widest border border-white/20 bg-white/10 px-4 py-2 rounded-full">
+            <button onclick="closeCertModal()"
+                class="text-xs font-mono text-white hover:text-gray-400 cursor-pointer uppercase tracking-widest border border-white/20 bg-white/10 px-4 py-2 rounded-full">
                 Close &times;
             </button>
         </div>
         <div class="my-auto py-8 flex items-center justify-center">
-            <img id="cert-image" src="" alt="Official Certificate" class="max-w-full max-h-[75vh] object-contain rounded-lg border border-white/20 shadow-[0_0_50px_rgba(255,255,255,0.1)]">
+            <img id="cert-image" src="" alt="Official Certificate"
+                class="max-w-full max-h-[75vh] object-contain rounded-lg border border-white/20 shadow-[0_0_50px_rgba(255,255,255,0.1)]">
         </div>
         <div class="text-center text-xs font-mono text-gray-500 border-t border-white/10 pt-4">
             Validated Certificate &bull; Kastabel Deandra Putrawan
@@ -396,13 +597,13 @@
 
         gsap.registerPlugin(ScrollTrigger);
         lenis.on('scroll', ScrollTrigger.update);
-        gsap.ticker.add((time)=>{ lenis.raf(time * 1000); });
+        gsap.ticker.add((time) => { lenis.raf(time * 1000); });
         gsap.ticker.lagSmoothing(0);
 
         // 2. Preloader & Timeline
         const heroTl = gsap.timeline({ paused: true });
         heroTl.from(".hero-reveal", { y: 50, opacity: 0, duration: 1, stagger: 0.1, ease: "power4.out" })
-              .from(".hero-fade", { opacity: 0, y: 20, duration: 0.8, ease: "power2.out" }, "-=0.5");
+            .from(".hero-fade", { opacity: 0, y: 20, duration: 0.8, ease: "power2.out" }, "-=0.5");
 
         const loadingCounter = { val: 0 };
         const loaderTl = gsap.timeline({
@@ -419,8 +620,8 @@
             onUpdate: () => document.getElementById("loader-counter").innerText = loadingCounter.val + "%",
             ease: "power2.inOut"
         }, 0)
-        .to(".loader-bar", { width: "100%", duration: 1.5, ease: "power3.inOut" }, 0)
-        .to("#loader", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, "+=0.2");
+            .to(".loader-bar", { width: "100%", duration: 1.5, ease: "power3.inOut" }, 0)
+            .to("#loader", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, "+=0.2");
 
         // Scroll Reveals
         document.querySelectorAll('.scroll-reveal').forEach((el) => {
@@ -433,8 +634,8 @@
         // 3. Project Data
         const projectData = {
             'sentiment': {
-                title: 'News Category Classification using TF-IDF & Logistic Regression', 
-                category: 'Machine Learning / NLP', 
+                title: 'News Category Classification using TF-IDF & Logistic Regression',
+                category: 'Machine Learning / NLP',
                 year: '2026',
                 role: 'ML Developer',
                 desc: 'An end-to-end NLP project that classifies news headlines into categories (World, Sports, Business, Sci/Tech) using TF-IDF feature extraction and a Logistic Regression pipeline.',
@@ -484,6 +685,20 @@
                     'Developed interactive Map Discovery integration for searching nearby healthcare facilities (e.g., RS Happy Land) with travel time, distance, ratings, and location details.',
                     'Crafted a seamless Telemedicine Chat interface with virtual assistant pre-screening ("Hai! Saya asisten virtual..."), real-time text consultation with general practitioners, and a prominent Floating SOS Emergency button.'
                 ]
+            },
+            'nomi': {
+                title: 'NOMI — Instagram Post & Story Design System',
+                category: 'Social Media Design / Branding',
+                year: '2026',
+                role: 'Social Media & Graphic Designer',
+                desc: 'On-brand editable social media templates designed for NOMI Matcha & Coffee. Features structured carousel series (Matcha Series & Coffee Series) with clean typography, price tags, and modern product showcases for Instagram posts and stories.',
+                tech: 'Figma, Canva, Brand Identity, Typography, Social Media Strategy',
+                list: [
+                    'Created a cohesive visual identity for NOMI (Matcha & Coffee) with warm earthy tones, dark green gradients, and bold minimalist typography.',
+                    'Designed structured carousel layouts featuring product series highlights: Matcha Series (Strawberry, Classic, Coffee Matcha) and Coffee Series (Americano, Latte, Caramel Coffee).',
+                    'Incorporated modern price tag badges and clear hierarchy for call-to-action sections ("GOOD DRINKS, BETTER MOOD.").',
+                    'Developed fully editable Post & Story templates ready for daily operational social media publishing.'
+                ]
             }
         };
 
@@ -492,14 +707,14 @@
 
         function openProject(id) {
             const data = projectData[id];
-            if(!data) return;
+            if (!data) return;
             document.getElementById('modal-title').innerText = data.title;
             document.getElementById('modal-category').innerText = data.category;
             document.getElementById('modal-year').innerText = data.year;
             document.getElementById('modal-role').innerText = data.role || 'UI/UX Designer';
             document.getElementById('modal-desc').innerText = data.desc;
             document.getElementById('modal-tech').innerText = data.tech;
-            
+
             const listEl = document.getElementById('modal-list');
             listEl.innerHTML = '';
             data.list.forEach(item => {
@@ -510,7 +725,7 @@
 
             modal.classList.add('active');
             lenis.stop(); document.body.style.overflow = 'hidden';
-            modal.scrollTo(0,0);
+            modal.scrollTo(0, 0);
         }
 
         function closeProject() {
@@ -531,7 +746,7 @@
 
         // Custom Cursor Logic (Event Delegation Fix for Dynamic Modals)
         const customCursor = document.getElementById('custom-cursor');
-        
+
         document.addEventListener('mousemove', (e) => {
             customCursor.style.left = e.clientX + 'px';
             customCursor.style.top = e.clientY + 'px';
@@ -550,4 +765,5 @@
         });
     </script>
 </body>
+
 </html>
