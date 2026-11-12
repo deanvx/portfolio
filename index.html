@@ -177,14 +177,10 @@
         <a href="#" class="text-lg font-semibold tracking-tight cursor-pointer">abel.dev</a>
         <div class="hidden md:flex gap-8 text-sm font-medium tracking-wide">
             <a href="#" class="text-gray-400 hover:text-white transition-colors link-underline cursor-pointer">Home</a>
-            <a href="#about"
-                class="text-gray-400 hover:text-white transition-colors link-underline cursor-pointer">About</a>
-            <a href="#experience"
-                class="text-gray-400 hover:text-white transition-colors link-underline cursor-pointer">Experience</a>
-            <a href="#projects"
-                class="text-gray-400 hover:text-white transition-colors link-underline cursor-pointer">Projects</a>
-            <a href="#contact"
-                class="text-gray-400 hover:text-white transition-colors link-underline cursor-pointer">Contact</a>
+            <a href="#projects" class="text-gray-400 hover:text-white transition-colors link-underline cursor-pointer">Projects</a>
+            <a href="#coursework" class="text-gray-400 hover:text-white transition-colors link-underline cursor-pointer">Coursework</a>
+            <a href="#experience" class="text-gray-400 hover:text-white transition-colors link-underline cursor-pointer">Experience</a>
+            <a href="#contact" class="text-gray-400 hover:text-white transition-colors link-underline cursor-pointer">Contact</a>
         </div>
     </nav>
 
@@ -379,60 +375,99 @@
         </section>
 
         <!-- Academic Coursework (English Assignments) -->
-        <section id="coursework" class="py-20 md:py-28 px-6 md:px-12 lg:px-24 border-t border-white/10">
+        <section id="coursework" class="py-20 md:py-32 px-6 md:px-12 lg:px-24 border-t border-white/10">
             <div class="max-w-6xl mx-auto">
-                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 scroll-reveal">
+                <!-- Section Header -->
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 scroll-reveal">
                     <div>
-                        <p class="text-xs uppercase tracking-[0.2em] text-blue-400 font-mono mb-3">Academic Archive</p>
-                        <h2 class="text-3xl md:text-5xl font-medium tracking-tight">English Coursework.</h2>
+                        <span class="text-xs uppercase tracking-[0.2em] text-blue-400 font-mono mb-3 block">Academic Repository</span>
+                        <h2 class="text-4xl md:text-6xl font-medium tracking-tight">English<br><span class="text-gray-500">Coursework.</span></h2>
                     </div>
-                    <p class="text-textMuted text-xs font-mono mt-4 md:mt-0">2026 • GOOGLE DRIVE REPOSITORY</p>
+                    <p class="text-textMuted text-sm font-light max-w-sm mt-6 md:mt-0 leading-relaxed">
+                        A curated archive of English for Informatics assignments, covering professional writing, oral presentations, and midterm assessments.
+                    </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 scroll-reveal">
-                    <!-- Tugas 1: Writing -->
-                    <a href="https://drive.google.com/LINK-TUGAS-1" target="_blank" rel="noopener noreferrer" class="group bg-[#0c0c0c] border border-white/10 rounded-2xl p-6 md:p-8 hover:border-white/30 hover:bg-white/[0.03] transition-all duration-300 flex justify-between items-center cursor-pointer">
+                <!-- 2x2 Balanced Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 scroll-reveal">
+                    
+                    <!-- Card 1: Writing -->
+                    <div class="bg-[#0c0c0c] border border-white/10 rounded-2xl p-8 hover:border-white/25 transition-all duration-500 flex flex-col justify-between group">
                         <div>
-                            <span class="text-xs font-mono text-gray-500 block mb-2">TASK 01 • WRITING</span>
-                            <h3 class="text-lg md:text-xl font-medium text-white group-hover:text-blue-400 transition-colors">Academic Writing Assignment</h3>
+                            <div class="flex justify-between items-center mb-6">
+                                <span class="text-xs font-mono uppercase tracking-widest text-blue-400 bg-blue-500/10 border border-blue-500/20 px-3 py-1 rounded-full">01 • Writing</span>
+                                <span class="text-xs font-mono text-gray-600">2026</span>
+                            </div>
+                            <h3 class="text-2xl font-medium text-white mb-4 group-hover:text-blue-400 transition-colors">Professional Correspondence & Review</h3>
+                            <p class="text-textMuted text-sm font-light leading-relaxed mb-8">
+                                Focuses on formal written communication in digital commerce contexts, featuring a structured product refund request letter and an analytical customer experience review.
+                            </p>
                         </div>
-                        <span class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 group-hover:bg-white group-hover:text-black group-hover:border-white transition-all duration-300 shrink-0">
-                            &nearr;
-                        </span>
-                    </a>
+                        <div>
+                            <a href="https://drive.google.com/LINK-TUGAS-1" target="_blank" rel="noopener noreferrer" class="cursor-pointer inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-white bg-white/5 border border-white/15 px-5 py-3 rounded-full hover:bg-white hover:text-black transition-all duration-300">
+                                Access Document <span class="text-sm">&nearr;</span>
+                            </a>
+                        </div>
+                    </div>
 
-                    <!-- Tugas 2: Speaking 1 -->
-                    <a href="https://drive.google.com/LINK-TUGAS-2" target="_blank" rel="noopener noreferrer" class="group bg-[#0c0c0c] border border-white/10 rounded-2xl p-6 md:p-8 hover:border-white/30 hover:bg-white/[0.03] transition-all duration-300 flex justify-between items-center cursor-pointer">
+                    <!-- Card 2: Speaking 1 -->
+                    <div class="bg-[#0c0c0c] border border-white/10 rounded-2xl p-8 hover:border-white/25 transition-all duration-500 flex flex-col justify-between group">
                         <div>
-                            <span class="text-xs font-mono text-gray-500 block mb-2">TASK 02 • SPEAKING</span>
-                            <h3 class="text-lg md:text-xl font-medium text-white group-hover:text-blue-400 transition-colors">Speaking Practice I</h3>
+                            <div class="flex justify-between items-center mb-6">
+                                <span class="text-xs font-mono uppercase tracking-widest text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-3 py-1 rounded-full">02 • Speaking</span>
+                                <span class="text-xs font-mono text-gray-600">2026</span>
+                            </div>
+                            <h3 class="text-2xl font-medium text-white mb-4 group-hover:text-indigo-400 transition-colors">Personal Introduction & Career Vision</h3>
+                            <p class="text-textMuted text-sm font-light leading-relaxed mb-8">
+                                A video presentation articulating academic background in Informatics, technical interests in AI and UI/UX, personal strengths, and long-term professional aspirations.
+                            </p>
                         </div>
-                        <span class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 group-hover:bg-white group-hover:text-black group-hover:border-white transition-all duration-300 shrink-0">
-                            &nearr;
-                        </span>
-                    </a>
+                        <div>
+                            <a href="https://drive.google.com/LINK-TUGAS-2" target="_blank" rel="noopener noreferrer" class="cursor-pointer inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-white bg-white/5 border border-white/15 px-5 py-3 rounded-full hover:bg-white hover:text-black transition-all duration-300">
+                                Watch Video <span class="text-sm">&nearr;</span>
+                            </a>
+                        </div>
+                    </div>
 
-                    <!-- Tugas 3: Speaking 2 -->
-                    <a href="https://drive.google.com/LINK-TUGAS-3" target="_blank" rel="noopener noreferrer" class="group bg-[#0c0c0c] border border-white/10 rounded-2xl p-6 md:p-8 hover:border-white/30 hover:bg-white/[0.03] transition-all duration-300 flex justify-between items-center cursor-pointer">
+                    <!-- Card 3: Speaking 2 -->
+                    <div class="bg-[#0c0c0c] border border-white/10 rounded-2xl p-8 hover:border-white/25 transition-all duration-500 flex flex-col justify-between group">
                         <div>
-                            <span class="text-xs font-mono text-gray-500 block mb-2">TASK 03 • SPEAKING</span>
-                            <h3 class="text-lg md:text-xl font-medium text-white group-hover:text-blue-400 transition-colors">Speaking Practice II</h3>
+                            <div class="flex justify-between items-center mb-6">
+                                <span class="text-xs font-mono uppercase tracking-widest text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 px-3 py-1 rounded-full">03 • Speaking</span>
+                                <span class="text-xs font-mono text-gray-600">2026</span>
+                            </div>
+                            <h3 class="text-2xl font-medium text-white mb-4 group-hover:text-cyan-400 transition-colors">Research Background & Literature Review</h3>
+                            <p class="text-textMuted text-sm font-light leading-relaxed mb-8">
+                                An academic oral briefing outlining core research problems, synthesis of relevant international journals, and methodological objectives in clear scientific English.
+                            </p>
                         </div>
-                        <span class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 group-hover:bg-white group-hover:text-black group-hover:border-white transition-all duration-300 shrink-0">
-                            &nearr;
-                        </span>
-                    </a>
+                        <div>
+                            <a href="https://drive.google.com/LINK-TUGAS-3" target="_blank" rel="noopener noreferrer" class="cursor-pointer inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-white bg-white/5 border border-white/15 px-5 py-3 rounded-full hover:bg-white hover:text-black transition-all duration-300">
+                                Watch Video <span class="text-sm">&nearr;</span>
+                            </a>
+                        </div>
+                    </div>
 
-                    <!-- Tugas 4: UTS -->
-                    <a href="https://drive.google.com/LINK-TUGAS-UTS" target="_blank" rel="noopener noreferrer" class="group bg-[#0c0c0c] border border-white/10 rounded-2xl p-6 md:p-8 hover:border-white/30 hover:bg-white/[0.03] transition-all duration-300 flex justify-between items-center cursor-pointer">
+                    <!-- Card 4: Midterm Exam -->
+                    <div class="bg-[#0c0c0c] border border-white/10 rounded-2xl p-8 hover:border-white/25 transition-all duration-500 flex flex-col justify-between group relative overflow-hidden">
+                        <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl pointer-events-none"></div>
                         <div>
-                            <span class="text-xs font-mono text-purple-400 block mb-2">ASSESSMENT • MIDTERM</span>
-                            <h3 class="text-lg md:text-xl font-medium text-white group-hover:text-purple-400 transition-colors">Midterm Exam (UTS)</h3>
+                            <div class="flex justify-between items-center mb-6">
+                                <span class="text-xs font-mono uppercase tracking-widest text-purple-400 bg-purple-500/10 border border-purple-500/20 px-3 py-1 rounded-full">04 • Midterm (UTS)</span>
+                                <span class="text-xs font-mono text-gray-600">2026</span>
+                            </div>
+                            <h3 class="text-2xl font-medium text-white mb-4 group-hover:text-purple-400 transition-colors">Job Application & Pitch Presentation</h3>
+                            <p class="text-textMuted text-sm font-light leading-relaxed mb-8">
+                                Comprehensive assessment combining a formal cover letter (PDF) and an executive pitch video highlighting technical qualifications, project experience, and workplace readiness.
+                            </p>
                         </div>
-                        <span class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 group-hover:bg-white group-hover:text-black group-hover:border-white transition-all duration-300 shrink-0">
-                            &nearr;
-                        </span>
-                    </a>
+                        <div>
+                            <a href="https://drive.google.com/LINK-TUGAS-UTS" target="_blank" rel="noopener noreferrer" class="cursor-pointer inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-white bg-white/5 border border-white/15 px-5 py-3 rounded-full hover:bg-white hover:text-black transition-all duration-300">
+                                Open Drive Folder <span class="text-sm">&nearr;</span>
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
